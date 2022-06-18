@@ -46,11 +46,15 @@ Pour acceder à la page d'apache aller sur `http://your_server_ip`
 
 Maintenant que vous avez un serveur Web opérationnel, vous devez installer le système de base de données pour pouvoir stocker et gérer les données de votre site. MySQL est un système de gestion de base de données populaire utilisé dans les environnements PHP
 Pour acquérir et installer ce logiciel il vaut utiliser:
+
 `sudo apt install mysql-server`
+
 Lorsque vous y êtes invité, confirmez l'installation en tapant `Y`, puis `ENTER`.
 
 Une fois l'installation terminée, il est recommandé d'exécuter un script de sécurité préinstallé avec MySQL. Ce script supprimera certains paramètres par défaut non sécurisés et verrouillera l'accès à votre système de base de données. Démarrez le script interactif en exécutant :
+
 `sudo mysql_secure_installation`
+
 Cela vous demandera si vous souhaitez configurer le `VALIDATE PASSWORD PLUGIN`.
 Répondez `Y`par oui, ou quoi que ce soit d'autre pour continuer sans activer.
 
@@ -80,6 +84,7 @@ Do you wish to continue with the password provided?(Press y|Y for Yes, any other
 
 Pour le reste des questions, appuyez `Y` et appuyez sur la touche `ENTER` à chaque invite. Cela supprimera certains utilisateurs anonymes et la base de données de test, désactivera les connexions `root` à distance et chargera ces nouvelles règles afin que `MySQL` respecte immédiatement les modifications que vous avez apportées.
 Lorsque vous avez terminé, testez si vous pouvez vous connecter à la console MySQL en tapant :
+
 `sudo mysql`
 
 ```{MYSQL}
@@ -107,11 +112,16 @@ Pour une sécurité accrue, il est préférable d'avoir des comptes d'utilisateu
 PHP est le composant de notre configuration qui traitera le code pour afficher le contenu dynamique à l'utilisateur final. En plus du `php` package, vous aurez besoin de `php-mysql` ,qui est un module PHP qui permet à PHP de communiquer avec des bases de données basées sur MySQL.
 Vous devrez également activer `libapache2-mod-php` qui est un module Apache pour gérer les fichiers PHP.
 Les packages PHP principaux seront automatiquement installés en tant que dépendances.
-Pour installer ces packages, exécutez la commande suivante : `sudo apt install php libapache2-mod-php php-mysql`
+Pour installer ces packages, exécutez la commande suivante :
+
+`sudo apt install php libapache2-mod-php php-mysql`
+
 À ce stade, votre pile LAMP est pleinement opérationnelle,
 La pile LAMP est alors installée. Cependant la plupart des scripts PHP utilisent des modules de PHP pour bénéficier de certaines fonctionnalités.
 Voici comment installer les modules les plus courants :
+
 `sudo apt install php-curl php-gd php-intl php-json php-mbstring php-xml php-zip`
+
 Description des paquets :
 
 - Le paquet [apache2](apt://apache2 "apt://apache2") installe le serveur HTTP [Apache 2](https://doc.ubuntu-fr.org/apache2 "apache2") (c'est une dépendance de libapache2-mod-php).

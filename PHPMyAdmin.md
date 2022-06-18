@@ -57,3 +57,11 @@ sudo systemctl restart apache2
 Si vous avez configurer un VirtualHost avec votre espace de travaille, pour créer un lien symbolique avec cela, utiliser la commande  :
 
 `sudo ln -s /usr/share/phpmyadmin /var/www/votreDossierDuVirtualHost`
+
+### Erreur de connection sur 'phpmyadmin'
+
+Premierement il faut avec votre editeur de texte:
+
+`sudo nano /etc/phpmyadmin/config.inc.php` et de décommenter la ligne `$cfg['server'][$i]['AllowPassword'] = TRUE` qui est entre 95 à 100è ligne
+
+Si malgrer cela vous n'arrivez toujours pas à vous connectez cela, peut etre dus au fait que vous n'avez pas les privilèges recquis pour se connecter il faut alors les modifier

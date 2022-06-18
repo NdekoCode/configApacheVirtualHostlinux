@@ -33,9 +33,22 @@ Cela créera un nouveau fichier vierge. Ajoutez la configuration simple suivante
 
 ```
 
-- Maintenant, utilisez `a2ensite` pour activer le nouvel hôte virtuel : `sudo a2ensite ndekocode`
-Vous souhaiterez peut-être désactiver le site Web par défaut installé avec Apache. Ceci est nécessaire si vous n'utilisez pas de nom de domaine personnalisé, car dans ce cas, la configuration par défaut d'Apache remplacerait votre hôte virtuel. Pour désactiver le site Web par défaut d'Apache, tapez: `sudo a2dissite 000-default`
-- Pour vous assurer que votre fichier de configuration ne contient pas d'erreurs de syntaxe, exécutez la commande suivante : `sudo apache2ctl configtest`
+Enregistrez et fermez le fichier lorsque vous avez terminé. Ensuite, activez l'hôte virtuel Apache et réécrivez le module
+
+- Maintenant, utilisez `a2ensite` pour activer le nouvel hôte virtuel :
+
+`sudo a2ensite ndekocode`
+
+- Utilisez la commande: `a2enmod rewrite` pour réécrivez le module
+
+Vous souhaiterez peut-être désactiver le site Web par défaut installé avec Apache. Ceci est nécessaire si vous n'utilisez pas de nom de domaine personnalisé, car dans ce cas, la configuration par défaut d'Apache remplacerait votre hôte virtuel. Pour désactiver le site Web par défaut d'Apache, tapez:
+
+`sudo a2dissite 000-default`
+
+- Pour vous assurer que votre fichier de configuration ne contient pas d'erreurs de syntaxe, exécutez la commande suivante :
+
+`sudo apache2ctl configtest`
+
 - Pour ajouter votre `VirtualHost` aux hosts global il va falloir l'indiquer dans le fichier `/etc/hosts` et ajouter la ligne correspondant à l'adresse de votre `VirtualHost` avec `sudo nano /etc/hosts`
 
 ```{HOSTS}
@@ -52,8 +65,12 @@ ff02::2 ip6-allroutes
 
 ```
 
-- Enfin, rechargez Apache pour que ces modifications prennent effet: `sudo systemctl reload apache2`
+- Enfin, redémarrez le service Apache pour mettre en œuvre les modification avec la commande:
+
+`sudo systemctl reload apache2`
+
 Votre nouveau site Web est maintenant actif, mais la racine Web est toujours vide. Créez un fichier à cet emplacement pour tester que l'hôte virtuel fonctionne comme prévu: `/var/www/ndekocode/index.html` ou `/var/www/ndekocde/index.php`
+
 - Inclure le contenu suivant dans ce fichier :
 
 ```{HTML}
