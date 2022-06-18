@@ -29,7 +29,7 @@ Voici ce que chacun de ces profils signifie :
 Pour l'instant, il est préférable de n'autoriser que les connexions sur le port 80, puisqu'il s'agit d'une nouvelle installation d'Apache et que vous n'avez pas encore de certificat TLS/SSL configuré pour autoriser le trafic HTTPS sur votre serveur.
 Pour autoriser uniquement le trafic sur le port `80` du profile `Apache`, utilisez: `sudo ufw allow in "Apache"` Vérifiez le changement avec : `sudo ufw status`
 
-```
+```{SHELL}
 Output
 Status: active
 

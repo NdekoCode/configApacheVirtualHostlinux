@@ -5,15 +5,24 @@ Lorsque vous utilisez le serveur Web Apache, vous pouvez créer des hôtes virtu
 pour encapsuler les détails de configuration et héberger plusieurs domaines à partir d'un seul serveur.
 Dans ce guide, nous allons configurer un domaine appelé `ndekocode` , mais vous devez le remplacer par `votre propre nom de domaine` .
 
-sur Ubuntu 22.04 on a un hôte virtuel activé par défaut qui est configuré pour servir les documents du `/var/www/html`.
+sur Ubuntu 20.04 ou plus on a un hôte virtuel activé par défaut qui est configuré pour servir les documents du `/var/www/html`.
+
 Bien que cela fonctionne bien pour un seul site, cela peut devenir compliqué si vous hébergez plusieurs sites.
 Au lieu de modifier `/var/www/html`, nous allons créer une structure de répertoires `/var/www` pour le site `ndekocode` , en laissant `/var/www/html` en place,  le répertoire par défaut `/var/www/html` servira si une demande client ne correspond à aucun autre site.
 Pour créer un `VirtualHost` voici les etapes à suivre
 
 - Créez le répertoire pour `ndekocode` comme suit:
+
 `sudo mkdir /var/www/ndekocode`
-- Ensuite, attribuez la propriété du répertoire avec la variable d'environnement `$USER` , qui fera référence à votre utilisateur système actuel : `sudo chown -R $USER:$USER /var/www/ndekocode` et `sudo chmod 750 /var/www/ndekocode`
-- Ensuite, ouvrez un nouveau fichier de configuration dans le répertoire d'Apache `sites-available`  à l'aide de votre éditeur de ligne de commande préféré. Ici, nous utiliserons nano: `sudo nano /etc/apache2/sites-available/your_domain.conf`
+
+- Ensuite, attribuez la propriété du répertoire avec la variable d'environnement `$USER` , qui fera référence à votre utilisateur système actuel :
+
+`sudo chown -R $USER:$USER /var/www/ndekocode` et `sudo chmod 775 /var/www/ndekocode`
+
+- Ensuite, ouvrez un nouveau fichier de configuration dans le répertoire d'Apache `sites-available`  à l'aide de votre éditeur de ligne de commande préféré. Ici, nous utiliserons nano:
+
+`sudo nano /etc/apache2/sites-available/your_domain.conf`
+
 Cela créera un nouveau fichier vierge. Ajoutez la configuration simple suivante avec votre propre nom de domaine Et Enregistrez et fermez le fichier lorsque vous avez terminé
 
 ```{Apache}
