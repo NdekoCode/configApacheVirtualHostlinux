@@ -27,7 +27,10 @@ S'être assuré que le serveur web fonctionne et que les scripts PHP sont correc
 ## Installation via les dépôts
 
 Il est recommandé d'installer phpMyAdmin depuis le site officiel pour avoir une installation fonctionnelle et de beneficier des mises à jour des sécurité
-Soit en ligne de commande : `sudo apt install phpmyadmin`
+Soit en ligne de commande :
+
+`sudo apt install phpmyadmin`
+
 Lors de l'installation, il vous sera posé quelques questions auxquelles il faut répondre avec soin :
 
 - Créer la base de données phpmyadmin : **oui**
@@ -41,9 +44,7 @@ phpMyAdmin devrait être accessible à l'adresse <http://localhost/phpmyadmin>
 
 Si vous avez choisis **Apache2** lors de l'installation du paquet _phpmyadmin_ ,Concernant les problèmes de non accessibilité de phpMyAdmin, Utilisez la commande suivante pour pouvoir répondre à nouveau aux questions :
 `sudo dpkg-reconfigure phpmyadmin`.
-
 Ensuite, lorsqu'on vous demande de choisir `apache2`, assurez-vous d'appuyer sur espace pendant que \[ \] apache2 est en surbrillance. Un astérisque doit apparaître entre les crochets. Appuyez ensuite sur `Entrée`. `Phpmyadmin` devrait reconfigurer et maintenant [http://localhost/phpmyadmin](http://localhost/phpmyadmin) devrait fonctionner.
-
 Ou si malgrer tout cela ne marche pas, ouvrez votre terminal, Ce problème a été résolu en ajoutant `Include /etc/phpmyadmin/apache.conf` au fichier `/etc/apache2/apache2.conf` et en redémarrant le service.
 Et donc Essaye ça
 
