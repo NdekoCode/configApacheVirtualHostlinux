@@ -83,6 +83,19 @@ cd /var/www/html
 composer create-project laravel/laravel NameOfMyAppLaravel --prefer-dist
 ```
 
+Si vous voulez installer une version specifique de Laravel Utiliser la commande suivante
+
+```{SHELL}
+composer create-project laravel/laravel="5.*" myProject
+```
+
+Dans le code ci-dessus, nous disons que nous voulons installer la version 5.* quelque chose de Laravel, comme par exemple: `5.1`,`5.4`, `5.5`, `5.6`,..., `5.X` 
+
+```{SHELL}
+composer create-project laravel/laravel="8.*" myProject
+```
+
+Ci dessous, on dit que l'on veut installer la version 8.X
 Une fois l'installation terminée, vous devriez voir la sortie suivante :
 
 ```{SHELL}
