@@ -79,7 +79,7 @@ sudo chown -R $USER:www-data bootstrap/cache
 Pour installer maintenant `Laravel` avec notre configuration local, Tout d'abord deplacez-vous vers le dossier `/var/www` puis installez le avec `composer`
 
 ```{SHELL}
-cd /var/www/html
+cd /var/www
 composer create-project laravel/laravel NameOfMyAppLaravel --prefer-dist
 ```
 
@@ -146,7 +146,7 @@ Options:
  Ensuite, modifiez le propriétaire du répertoire laravelapp et accordez les autorisations appropriées au répertoire de stockage avec la commande suivante :
 
 ```{SHELL}
-sudo chown -R www-data:www-data /var/www/NameOfMyAppLaravel
+sudo chown -R $USER:www-data /var/www/NameOfMyAppLaravel
 sudo chmod -R 775 /var/www/NameOfMyAppLaravel/storage
 ```
 
