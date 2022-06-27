@@ -41,7 +41,24 @@ Cela créera un nouveau fichier vierge. Ajoutez la configuration simple suivante
 </VirtualHost>
 
 ```
+Si vous utilisez laravel, vous devez modifier le "DocumentRoot" avec 
 
+```{Apache}
+<VirtualHost *:80>
+    ServerName ndekocode.local
+    ServerAlias www.ndekocode.local
+    ServerAdmin webmaster@localhost
+    DocumentRoot "/var/www/ndekocode/public"
+    <Directory "/var/www/ndekocode">
+  Options FollowSymLinks
+  AllowOverride all
+  Require all granted
+ </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+```
 Enregistrez et fermez le fichier lorsque vous avez terminé. Ensuite, activez l'hôte virtuel Apache et réécrivez le module
 
 - Maintenant, utilisez `a2ensite` pour activer le nouvel hôte virtuel :
