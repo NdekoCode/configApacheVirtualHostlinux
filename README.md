@@ -17,7 +17,7 @@ Pour créer un `VirtualHost` voici les etapes à suivre
 
 - Ensuite, attribuez la propriété du répertoire avec la variable d'environnement `$USER` , qui fera référence à votre utilisateur système actuel :
 
-`sudo chown -R $USER:$USER /var/www/ndekocode` et `sudo chmod 775 /var/www/ndekocode`
+`sudo chown -R $USER:www-data /var/www/ndekocode` et `sudo chmod 775 /var/www/ndekocode`
 
 - Ensuite, ouvrez un nouveau fichier de configuration dans le répertoire d'Apache `sites-available`  à l'aide de votre éditeur de ligne de commande préféré. Ici, nous utiliserons nano:
 
